@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <div class="title">
+    <p>予定の新規追加</p>
+  </div>
+
+
+  <div class="content">
+    <%= form_with model: @post do |form| %>
+
+      <div>
+        <%= form.label :title ,"タイトル" %>
+        <%= form.text_field :title %>
+      </div>
+
+      <div>
+        <%= form.label :start_date ,"開始日" %>
+        <%= form.date_field :start_date %>
+      </div>
+
+      <div>
+        <%= form.label :end_date ,"終了日" %>
+        <%= form.date_field :end_date %>
+      </div>
+
+      <div>
+        <%= form.label :all_day ,"終日の場合はチェックを入れます" %>
+        <%= form.check_box :all_day %>
+      </div>
+
+      <div>
+        <%= form.label :memo ,"スケジュールメモ" %>
+        <%= form.text_area :memo %>
+      </div>
+
+      <div>
+        <%= link_to "キャンセル", posts_path %>
+        <%= form.submit "保存" %>
+      </div>
+
+    <% end %>
+  </div>
+
+
+
+
+</div>
