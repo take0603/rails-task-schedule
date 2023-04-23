@@ -3,6 +3,7 @@
     <p>予定の新規追加</p>
   </div>
 
+  <%= render "shared/error", obj: @post %>
 
   <div class="content">
     <%= form_with model: @post do |form| %>
