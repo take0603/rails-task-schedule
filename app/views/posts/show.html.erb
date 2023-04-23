@@ -1,0 +1,40 @@
+<div class="wrapper">
+
+  <p><%= link_to "一覧に戻る", posts_path %></p>
+
+  <div class="title">
+    <p>タイトル</p>
+    <p><%= link_to "編集", edit_post_path %></p>
+  </div>
+
+
+  <div class="content">
+    <table>
+      <tr>
+        <th>開始日</th>
+        <td><%= @post.start_date %></td>
+      </tr>
+
+      <tr>
+        <th>終了日</th>
+        <td><%= @post.end_date %></td>
+      </tr>
+
+      <tr>
+        <th>終日</th>
+        <td><%= @post.all_day %></td>
+      </tr>
+
+      <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @post.memo %></td>
+      </tr>
+
+
+    </table>
+  </div>
+
+
+
+
+</div>

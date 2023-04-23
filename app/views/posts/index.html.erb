@@ -32,6 +32,9 @@
             <td><%= post.end_date %></td>
             <td><%= post.all_day %></td>
             <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+            <td><%= link_to "詳細", post %></td>
+            <td><%= link_to "編集", [:edit, post] %></td>
+            <td><%= link_to "削除", post, method: :delete, data: {confirm: "「#{post.title}」を削除してよろしいですか？\nこの操作は取り消せません。"} %></td>
           </tr>
         <% end %>
       </tbody>
@@ -42,7 +45,7 @@
 
   <div class="footer">
     <p>予定合計</p>
-    <p>本日の日付</P>
+    <p><%= "本日の日付 #{Date.today}" %></P>
   </div>
 
 </div>
