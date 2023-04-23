@@ -22,7 +22,11 @@
 
       <tr>
         <th>終日</th>
-        <td><%= @post.all_day %></td>
+        <td>
+          <% if @post.all_day %>
+            <%= "⚪︎" %>
+          <% end %>
+        </td>
       </tr>
 
       <tr>
