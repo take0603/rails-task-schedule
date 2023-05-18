@@ -13,6 +13,7 @@ class PostsController < ApplicationController
       flash[:notice] = "スケジュールを新規登録しました"
       redirect_to posts_path
     else
+      flash.now[:notice] = "スケジュールの登録に失敗しました"
       render "new"
     end
   end
@@ -31,7 +32,8 @@ class PostsController < ApplicationController
       flash[:notice] = "スケジュールを更新しました"
       redirect_to :posts
     else
-      render "edit"
+      flash.now[:notice] = "スケジュールの更新に失敗しました"
+      render "edit"      
     end
   end
 
