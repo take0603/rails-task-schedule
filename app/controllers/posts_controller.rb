@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       redirect_to :posts
     else
       flash.now[:notice] = "スケジュールの更新に失敗しました"
-      render "edit"      
+      render "edit"
     end
   end
 

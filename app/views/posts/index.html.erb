@@ -1,5 +1,5 @@
 <div class="wrapper">
-  
+
   <div class="title">
     <h2>予定一覧</h2>
     <%= link_to new_post_path, class: "btn-new" do %>
@@ -9,7 +9,6 @@
   </div>
 
   <div class="index-content">
-    
     <table class="index-table">  
       <thead>
         <tr>
@@ -56,6 +55,5 @@
   <% if flash[:notice] %>
     <p class="success-alert"><%= flash[:notice] %></p>
   <% end %>
-
 
 </div>
