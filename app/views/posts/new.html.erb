@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="form-container">
+
+    <div class="title">
+      <h2>予定の新規追加</h2>
+    </div>
+
+    <div class="form-content">
+      <%= render "shared/error", obj: @post %>
+
+      <%= form_with model: @post, id: "post-form" do |form| %>
+        <div>
+          <%= form.label :title, "タイトル" %><span> *</span>
+          <%= form.text_field :title, placeholder: "タイトル" %>
+        </div>
+
+        <div class="date-form">
+          <div>
+            <%= form.label :start_date, "開始日" %><span> *</span>
+            <%= form.date_field :start_date %>
+          </div>
+
+          <div>
+            <%= form.label :end_date, "終了日" %><span> *</span>
+            <%= form.date_field :end_date %>
+          </div>
+        </div>
+
+        <div>
+          <%= form.check_box :all_day %>  
+          <%= form.label :all_day, "終日の場合はチェックを入れます" %>          
+        </div>
+
+        <div>
+          <%= form.label :memo, "スケジュールメモ" %>
+          <%= form.text_area :memo, placeholder: "メモを入力する" %>
+        </div>
+
+        <div class="form-button">
+          <%= link_to "キャンセル", posts_path, class: "btn-cancel" %>
+          <%= form.submit "保存", class: "btn-save" %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <% if flash[:notice] %>
+    <p class="failure-alert"><%= flash[:notice] %></p>
+  <% end %>
+
+</div>
